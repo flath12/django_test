@@ -22,6 +22,6 @@ from rango import views
 urlpatterns = [
    url(r'^admin/', admin.site.urls),
    url(r'^', include('helloworld.urls')), 
-   url(r'^rango/', views.index, name='index'),
-   url(r'^rango/', include('rango.urls'))
+   #url(r'^rango/', views.index.as_view, name='index'),
+   url(r'^rango/', include('rango.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
