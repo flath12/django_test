@@ -122,13 +122,16 @@ USE_TZ = True
 def root(folder):
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), '..',folder)
 
-STATIC_ROOT = root('staticstorage')
+#STATIC_ROOT = root('staticstorage')
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+#STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
-#STATIC_ROOT = 'static'
+STATIC_ROOT = 'static'
+#STATICFILES_DIRS = (
+#    root('static'),
+#)
 STATICFILES_DIRS = (
-    root('static'),
+    os.path.join(BASE_DIR, 'django_test/static'),
 )
 #STATICFILES_DIRS = [STATIC_DIR, ]
