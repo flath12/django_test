@@ -11,7 +11,7 @@ phases:
       # Discover and run unit tests. For more information, see <https://docs.djangoproject.com/en/2.0/topics/testing/overview/>
       - python manage.py test
       - python populate_rango.py
-      - python createsuperuser.py
+      - echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin1234')" | python manage.py shell
 
 artifacts:
   type: zip
