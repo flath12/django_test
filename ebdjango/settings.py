@@ -83,7 +83,8 @@ WSGI_APPLICATION = 'ebdjango.wsgi.application'
 #    }
 #}
 
-DATABASES = {
+if 'RDS_HOSTNAME' in os.environ:
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': os.environ['RDS_DB_NAME'],
